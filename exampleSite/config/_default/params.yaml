@@ -1,0 +1,31 @@
+theme: "theme-1"
+
+nav:
+  description: "Hi, my name is Anthony Doe. Briefly introduce yourself here. You can also provide a link to the about page.<br><a href=\"/about\">Find out more about me</a>"
+  image: /img/profile.png
+
+  contactLinks:
+  - icon: "twitter"
+    icon_pack: "fab"
+    name: "DM Me"
+    link: "https://twitter.com/Twitter"
+  - icon: "linkedin-in"
+    icon_pack: "fab"
+    name: "Contact Me"
+    link: "https://linkedin.com"
+  - icon: "github-alt"
+    icon_pack: "fab"
+    name: "DM Me"
+    link: "https://github.com"
+  - icon: "stack-overflow"
+    icon_pack: "fab"
+    name: "DM Me"
+    link: "https://twitter.com/Twitter"
+  - icon: "codepen"
+    icon_pack: "fab"
+    name: "DM Me"
+    link: "https://twitter.com/Twitter"
+
+  button:
+    link: https://themes.3rdwavemedia.com/
+    text: Get in Touch

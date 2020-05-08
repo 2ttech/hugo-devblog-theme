@@ -1,0 +1,31 @@
+{{ $featured := (.Resources.ByType "image").GetMatch "*featured*" }}
+{{ $thumbnail := (.Resources.ByType "image").GetMatch "*thumbnail*" }}
+
+{{ $image := $thumbnail }}
+
+{{ if and (not $image) $featured }}
+    {{ $image = $featured }}
+{{ end }}
+
+<div class="item mb-5">
+    <div class="media">
+        {{ if $image }}
+        {{ if and (gt $image.Width 110) (gt $image.Height 110) }}
+        {{ $image = $image.Fit "110x110" }}
+        {{ end }}
+
+        <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ $image.RelPermalink }}" alt="image">
+        {{ end }}
+
+        <div class="media-body">
+            <h3 class="title mb-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+
+            <div class="meta mb-1">
+                {{ partial "post_meta" . }}
+            </div>
+
+            <div class="intro">{{ .Summary }}</div>
+            <a class="more-link" href="{{ .RelPermalink }}">Read more &rarr;</a>
+        </div><!--//media-body-->
+    </div><!--//media-->
+</div><!--//item-->

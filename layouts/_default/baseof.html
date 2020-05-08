@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+    {{- partial "site_head.html" . -}}
+</head>
+<body>
+    <header class="header text-center">
+        {{- partial "header.html" . -}}
+    </header>
+
+    <div class="main-wrapper">
+        {{- block "main" . }}{{- end }}
+
+        <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+            <br>
+            <small class="copyright">{{ now.Year }} &copy; {{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{ else }}Ported to Hugo by <a href="https://github.com/2ttech" target="_blank">2T-Tech</a>{{ end }}</small>
+
+	    </footer>
+    </div>
+
+    {{ partial "site_js.html" . }}
+
+    {{ template "_internal/google_analytics.html" . }}
+</body>
+</html>

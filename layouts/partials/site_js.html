@@ -1,0 +1,13 @@
+{{ $js := site.Data.devblog.assets.js }}
+{{ range $js }}
+  {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf .url .version) .sri | safeHTML }}
+{{ end }}
+
+{{ $js_comment := printf "/* Devblog v%s | https://sourcethemes.com/academic/ */\n" site.Data.chunky.version }}
+{{ $js_bundle_head := $js_comment | resources.FromString "js/bundle-head.js" }}
+{{ $js_main := resources.Get "js/main.js" }}
+{{ $js_custom := resources.Get "js/custom.js" }}
+{{ $js_bundle := slice $js_main $js_custom }}
+{{ $js_bundle := $js_bundle | resources.Concat "js/devblog-bundle-pre.js" | minify }}
+{{ $js_bundle := slice $js_bundle_head $js_bundle | resources.Concat "js/devblog.min.js" | fingerprint "md5" }}
+<script src="{{ $js_bundle.RelPermalink }}"></script>

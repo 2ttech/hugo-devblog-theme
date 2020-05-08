@@ -1,0 +1,48 @@
+{{ $current_page := . }}
+
+<h1 class="blog-name pt-lg-4 mb-0"><a href="/">{{ .Site.Title }}</a></h1>
+        
+<nav class="navbar navbar-expand-lg navbar-dark" >
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navigation" class="collapse navbar-collapse flex-column" >
+        <div class="profile-section pt-3 pt-lg-0">
+            <img class="profile-image mb-3 rounded-circle mx-auto" src="{{ .Site.Params.nav.image | safeHTML }}" alt="image" >			
+            
+            <div class="bio mb-3">
+                {{ .Site.Params.nav.description | safeHTML }}
+            </div><!--//bio-->
+            
+            <ul class="social-list list-inline py-3 mx-auto">
+                {{ range .Site.Params.nav.contactLinks }}
+                <li class="list-inline-item"><a href="{{ .link }}" title="{{ .name }}"><i class="{{ .icon_pack }} fa-{{ .icon }} fa-fw"></i></a></li>
+                {{ end }}
+            </ul><!--//social-list-->
+
+            <hr> 
+        </div><!--//profile-section-->
+        
+        <ul class="navbar-nav flex-column text-left">
+            {{ range .Site.Menus.main }}
+
+            {{/* Get active page. */}}
+            {{ $is_link_in_current_path := in $current_page.RelPermalink .URL }}
+
+            <li class="nav-item {{if $is_link_in_current_path }} active{{end}}">
+                <a class="nav-link" href="{{ .URL | relLangURL }}"><i class="fas fa-{{ .Pre }} fa-fw mr-2"></i>{{ .Name | safeHTML }} <span class="sr-only">(current)</span></a>
+            </li>
+
+            {{ end }}
+        </ul>
+        
+        {{ if .Site.Params.nav.button }}
+        <div class="my-2 my-md-3">
+            <a class="btn btn-primary" href="{{ .Site.Params.nav.button.link }}" target="_blank">{{ .Site.Params.nav.button.text | safeHTML }}</a>
+        </div>
+        {{ end }}
+
+    </div>
+</nav>

@@ -1,0 +1,46 @@
+<title>
+    {{ block "title" . }}
+    {{ with .Params.Title }} {{ . }} | {{ end }}
+    {{ .Site.Title }}
+  {{ end }}
+</title>
+
+{{- if .Description -}}
+  <meta name="description" content="{{ .Description }}">
+{{- else if .Site.Params.description -}}
+  <meta name="description" content="{{ .Site.Params.description }}">
+{{- end -}}
+    
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="author" content="{{ if .Params.authors }}{{ delimit .Params.authors ", " }}{{ else }}{{ .Site.Params.author }}{{ end }}">
+
+{{ $css := site.Data.devblog.assets.css }}
+{{ range $css }}
+  {{ printf "<link rel=\"stylesheet\" href=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\" />" (printf .url .version) .sri | safeHTML }}
+{{ end }}
+
+<link rel="shortcut icon" href="favicon.ico"> 
+
+{{- with .OutputFormats.Get "RSS" }}
+  <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}">
+  <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}">
+{{- end -}}
+
+<!-- Theme CSS -->
+{{ $css_comment := printf "/*!* Devblog v%s (https://sourcethemes.com/academic/) */\n" site.Data.theme.version }}
+{{ $css_bundle_head := $css_comment | resources.FromString "css/bundle-head.css" }}
+{{ $css_options := dict "targetPath" "css/devblog.css" }}
+{{- if (in (slice (getenv "HUGO_ENV") hugo.Environment) "production") -}}
+  {{- $css_options = merge $css_options (dict "outputStyle" "compressed") -}}
+{{- end -}}
+{{ $sass_template := resources.Get "scss/main.scss" }}
+{{ $style := $sass_template | resources.ExecuteAsTemplate "main_parsed.scss" . | toCSS $css_options }}
+{{ $style := slice $css_bundle_head $style | resources.Concat "css/devblog.css" }}
+{{- if (eq (getenv "HUGO_ENV") "production") -}}
+  {{- $style = $style | minify | fingerprint "md5" -}}
+{{- end -}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">

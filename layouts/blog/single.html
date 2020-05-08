@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+{{ $featured := (.Resources.ByType "image").GetMatch "*featured*" }}
+
+<article class="blog-post px-3 py-5 p-md-5">
+    <div class="container">
+        <header class="blog-post-header">
+            <h2 class="title mb-2">{{ .Title }}</h2>
+            <div class="meta mb-3">
+                {{ partial "post_meta" . }}
+            </div>
+        </header>
+        
+        <div class="blog-post-body">
+
+            {{ if $featured }}
+            {{ $link := .Params.featured.link }}
+            {{ $credit := .Params.featured.credit }}
+
+            <figure class="blog-banner">
+                {{ if $link }}<a href="https://made4dev.com">{{ end }}
+                <img class="img-fluid" src="{{ $featured }}" alt="image">
+                {{ if $link }}</a>{{ end }}
+                <figcaption class="mt-2 text-center image-caption">{{ $credit | safeHTML }}</figcaption>
+            </figure>
+            {{ end }}
+
+            {{ .Content }}
+        </div>
+
+        <nav class="blog-nav nav nav-justified my-5">
+            <a class="nav-link-prev nav-item nav-link rounded-left" href="index.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+            <a class="nav-link-next nav-item nav-link rounded-right" href="blog-list.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+          </nav>
+    </div>
+</article>
+{{ end }}

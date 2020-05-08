@@ -1,0 +1,6 @@
+{{- $theme := .Site.Params.theme | default "theme-1" -}}
+
+@import "_{{ $theme }}.scss";
+@import "bootstrap/scss/bootstrap.scss";
+@import "theme/styles.scss";
+@import "custom.scss";

@@ -1,0 +1,44 @@
+# Versioning and Subresource Integrity (SRI) for Academic's JavaScript and CSS dependencies
+
+# When updating the version of an asset below, please also update the corresponding SRI.
+# How to update the SRI for an entry:
+#   echo -n "sha512-" && curl --silent "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML" | openssl dgst -sha512 -binary | openssl enc -base64 -A
+# Or, the SRI for the appropriate asset can be copied from https://cdnjs.com/ .
+
+# JavaScript
+
+js:
+- name: fontAwesome
+  version: 5.13.0
+  sri: "sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="
+  url: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/%s/js/all.min.js"
+- name: jquery
+  version: 3.4.1
+  sri: "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  url: "https://cdnjs.cloudflare.com/ajax/libs/jquery/%s/jquery.min.js"
+- name: popper
+  version: 2.4.0
+  sri: sha256-OH05DFHUWzr725HmuHo3pnuvUUn+TJuj8/Qz9xytFEw=
+  url: https://cdnjs.cloudflare.com/ajax/libs/popper.js/%s/cjs/popper.min.js
+- name: bootstrap
+  version: 4.4.0
+  sri: "sha256-oKpAiD7qu3bXrWRVxnXLV1h7FlNV+p5YJBIr8LOCFYw="
+  url: "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/js/bootstrap.min.js"
+- name: highlight
+  version: 10.0.2
+  sri: "sha256-xBWd+VDTBasaTja2bfaCX4aA2H18UxRsjRFkK3rgfkI="
+  url: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/%s/highlight.min.js"
+- name: moment
+  version: 2.25.3
+  sri: sha256-C66CaAImteEKZPYvgng9j10J/45e9sAuZyfPYCwp4gE=
+  url: https://cdnjs.cloudflare.com/ajax/libs/moment.js/%s/moment.min.js
+# - name: vanilla-lazyload
+#   version: 12.3.0
+#   sri: "sha256-bojBIKfs4l2WDcJODncBIGEe5fhU7/sM3zRO5/f2nqE=" 
+#   url: "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/%s/lazyload.min.js"
+
+css:
+- name: highlight
+  version: 10.0.2
+  sri: "sha256-nfuQSmJM/8wWM/S11LZmxszSv2HggH128IqmGD0hny8="
+  url: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/%s/styles/monokai-sublime.min.css"
