@@ -3,19 +3,31 @@
 
 name = "Hugo Devblog Theme"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
+licenselink = "https://github.com/2ttech/hugo-devblog-theme/blob/master/LICENSE"
+description = "A port of the DevBlog bootstrap theme created by xriley (https://github.com/xriley/DevBlog-Theme)"
 homepage = "http://example.com/"
-tags = []
-features = []
-min_version = "0.41.0"
+min_version = "0.65"
+tags = ["resume",
+        "responsive",
+        "clean",
+        "personal",
+        "company",
+        "blog",
+        "minimal",
+        "mobile",
+        "simple",
+        "starter",
+        "modern",
+        "customizable"
+        ]
+features = ["blog"]
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Terje Torkelsen"
+  homepage = "https://torkelsen.tech"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "DevBlog-Theme"
+  homepage = "https://themes.3rdwavemedia.com/bootstrap-templates/popular/devblog-free-bootstrap-4-blog-template-for-developers/"
+  repo = "https://github.com/xriley/DevBlog-Theme"

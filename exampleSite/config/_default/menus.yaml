@@ -1,3 +1,7 @@
+# Main menu for site, shown on left side
+# `pre` defines the icon to use for item. See https://fontawesome.com/icons?d=gallery
+# for a list of available fontawesome icons to use
+
 main:
 - name: Home
   url: /
