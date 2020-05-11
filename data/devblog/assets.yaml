@@ -18,8 +18,8 @@ js:
   url: "https://cdnjs.cloudflare.com/ajax/libs/jquery/%s/jquery.min.js"
 - name: popper
   version: 2.4.0
-  sri: sha256-OH05DFHUWzr725HmuHo3pnuvUUn+TJuj8/Qz9xytFEw=
-  url: https://cdnjs.cloudflare.com/ajax/libs/popper.js/%s/cjs/popper.min.js
+  sri: sha256-FT/LokHAO3u6YAZv6/EKb7f2e0wXY3Ff/9Ww5NzT+Bk=
+  url: https://cdnjs.cloudflare.com/ajax/libs/popper.js/%s/umd/popper.min.js
 - name: bootstrap
   version: 4.4.0
   sri: "sha256-oKpAiD7qu3bXrWRVxnXLV1h7FlNV+p5YJBIr8LOCFYw="

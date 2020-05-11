@@ -1,6 +1,6 @@
 ---
-title: "Why Every Developer Should Have A Blog"
-date: "2020-02-01"
+title: "About Remote Working"
+date: "2019-09-01"
 aliases: ["about-us","about-hugo","contact"]
 author: "Hugo Authors"
 

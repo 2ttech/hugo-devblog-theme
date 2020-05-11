@@ -1,0 +1,11 @@
+{{ $inner := .Inner | markdownify }}
+{{ $oldUl := "<ul>" }}
+{{ $newUl := "<ul class=\"mb-5\">" }}
+{{ $oldOl := "<ol>" }}
+{{ $newOl := "<ol class=\"mb-5\">" }}
+{{ $oldLi := "<li>" }}
+{{ $newLi := "<li class=\"mb-2\">" }}
+{{ $ul := replace $inner $oldUl $newUl }}
+{{ $ul = replace $ul $oldOl $newOl }}
+{{ $ul = replace $ul $oldLi $newLi }}
+{{ $ul | safeHTML }}

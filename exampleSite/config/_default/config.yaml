@@ -19,6 +19,11 @@ theme: "hugo-devblog-theme"
 
 summaryLength: 30
 
+paginate: 6
+
+mainSections:
+- blog
+
 # taxonomies:
 #   tag: "tags"
 #   category: "categories"

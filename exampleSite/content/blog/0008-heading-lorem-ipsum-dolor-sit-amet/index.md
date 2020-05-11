@@ -1,6 +1,6 @@
 ---
-title: "Why Every Developer Should Have A Blog"
-date: "2020-02-01"
+title: "Heading Lorem Ipsum Dolor Sit Amet"
+date: "2019-07-01"
 aliases: ["about-us","about-hugo","contact"]
 author: "Hugo Authors"
 

@@ -1,6 +1,6 @@
 ---
-title: "Why Every Developer Should Have A Blog"
-date: "2020-02-01"
+title: "Heading Duis Arcu Tortor"
+date: "2019-04-01"
 aliases: ["about-us","about-hugo","contact"]
 author: "Hugo Authors"
 

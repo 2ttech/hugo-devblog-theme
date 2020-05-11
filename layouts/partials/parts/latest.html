@@ -1,0 +1,17 @@
+{{ $Root := . }}
+
+<section class="blog-list px-3 py-5 p-md-5">
+    <div class="container">
+        {{ $paginator := .Root.Paginate (where .Root.RegularPages "Type" "in" .Params.types) }}
+
+        {{ with .Root.Site.GetPage "section" "blog" }}
+            {{ $paginator := .Paginate (where .Pages "Type" "in" $Root.Params.types) }}
+            {{ range $paginator.Pages }}
+                {{ .Render "summary" }}
+            {{ end }}
+
+            {{ partial "pagination.html" $paginator }}
+        {{ end }}
+
+    </div>
+</section>

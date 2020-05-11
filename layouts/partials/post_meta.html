@@ -1,5 +1,8 @@
 <div class="meta mb-1">
     <span class="date">Published <span class="date-since">{{ .Date.Format "2006-01-02" }}</span></span>
     <span class="time">{{ .ReadingTime }} min read</span>
-    <span class="comment"><a href="#">8 comments</a></span>
+
+    {{ if .Site.DisqusShortname }}
+    <span class="comment"><a href="{{ .Page.Permalink }}#disqus_thread">0 comments</a></span>
+    {{ end }}
 </div>

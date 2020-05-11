@@ -30,6 +30,9 @@
 
             {{/* Get active page. */}}
             {{ $is_link_in_current_path := in $current_page.RelPermalink .URL }}
+            {{ if and (not $current_page.IsHome) (eq .URL "/") }}
+                {{ $is_link_in_current_path = false }}
+            {{ end }}
 
             <li class="nav-item {{if $is_link_in_current_path }} active{{end}}">
                 <a class="nav-link" href="{{ .URL | relLangURL }}"><i class="fas fa-{{ .Pre }} fa-fw mr-2"></i>{{ .Name | safeHTML }} <span class="sr-only">(current)</span></a>

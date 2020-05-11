@@ -11,3 +11,7 @@
 {{ $js_bundle := $js_bundle | resources.Concat "js/devblog-bundle-pre.js" | minify }}
 {{ $js_bundle := slice $js_bundle_head $js_bundle | resources.Concat "js/devblog.min.js" | fingerprint "md5" }}
 <script src="{{ $js_bundle.RelPermalink }}"></script>
+
+{{ if .Site.DisqusShortname }}
+<script id="dsq-count-scr" src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" async></script>
+{{ end }}

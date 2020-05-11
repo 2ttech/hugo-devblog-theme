@@ -1,0 +1,28 @@
+{{ $prevURL := "" }}
+{{ $nextURL := "" }}
+{{ $type := printf "%T" .}}
+
+<!-- . is a page -->
+{{ if eq $type "*hugolib.pageState" }}
+    {{ if .Prev }}
+        {{ $prevURL = .Prev.RelPermalink }}
+    {{ end }}
+    {{ if .Next }}
+        {{ $nextURL = .Next.RelPermalink }}
+    {{ end }}
+{{ end }}
+
+<!-- . is a pagination object -->
+{{ if eq $type "*page.Pager" }}
+    {{ if .Prev }}
+        {{ $prevURL = .Prev.URL }}
+    {{ end }}
+    {{ if .Next }}
+        {{ $nextURL = .Next.URL }}
+    {{ end }}
+{{ end }}
+
+<nav class="blog-nav nav nav-justified my-5">
+    <a class="nav-link-prev nav-item nav-link {{ if not $prevURL }} d-none {{ end }} rounded-left" href="{{ $prevURL }}">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+    <a class="nav-link-next nav-item nav-link {{ if not $nextURL }} d-none {{ end }} rounded" href="{{ $nextURL }}">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+</nav>

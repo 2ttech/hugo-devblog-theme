@@ -1,0 +1,13 @@
+<section class="cta-section theme-bg-light py-5">
+    <div class="container text-center">
+        <h2 class="heading">{{ .Params.title }}</h2>
+        <div class="intro">{{ .Params.subtitle }}</div>
+        <form class="signup-form form-inline justify-content-center pt-3">
+            <div class="form-group">
+                <label class="sr-only" for="semail">{{ .Params.placeholder }}</label>
+                <input type="email" id="semail" name="semail1" class="form-control mr-md-1 semail" placeholder="{{ .Params.placeholder }}">
+            </div>
+            <button type="submit" class="btn btn-primary">{{ .Params.button }}</button>
+        </form>
+    </div><!--//container-->
+</section>
