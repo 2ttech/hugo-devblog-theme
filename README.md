@@ -4,7 +4,7 @@ A port of the DevBlog bootstrap theme created by xriley (https://github.com/xril
 
 ## Screenshot
 
-![Devblog screenshot](images/demo.png)
+![Devblog screenshot](https://github.com/2ttech/hugo-devblog-theme/raw/master/images/screenshot.png)
 
 ## Features
 

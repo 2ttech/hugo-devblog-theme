@@ -1,12 +1,12 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "Hugo Devblog Theme"
+name = "Devblog Theme"
 license = "MIT"
 licenselink = "https://github.com/2ttech/hugo-devblog-theme/blob/master/LICENSE"
 description = "A port of the DevBlog bootstrap theme created by xriley (https://github.com/xriley/DevBlog-Theme)"
 homepage = "http://example.com/"
-min_version = "0.65"
+min_version = "0.65.0"
 tags = ["resume",
         "responsive",
         "clean",
