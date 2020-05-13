@@ -47,3 +47,7 @@
 
 <link rel="icon" type="image/png" href="{{(partial "functions/get_icon" 32).RelPermalink}}">
 <link rel="apple-touch-icon" type="image/png" href="{{(partial "functions/get_icon" 192).RelPermalink}}">
+
+{{ template "_internal/google_analytics.html" . }}
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
