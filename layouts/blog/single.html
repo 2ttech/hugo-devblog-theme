@@ -6,8 +6,13 @@
     <div class="container">
         <header class="blog-post-header">
             <h2 class="title mb-2">{{ .Title }}</h2>
-            <div class="meta mb-3">
+            <div class="meta mb-2">
                 {{ partial "post_meta" . }}
+            </div>
+            <div class="mb-3">
+                {{ range (.GetTerms "tags") }}
+                <a href="{{ .Permalink }}" class="badge badge-light">{{ .LinkTitle }}</a>
+                {{ end }}
             </div>
         </header>
         
