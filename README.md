@@ -47,6 +47,14 @@ Similar to create a new theme just copy one of the theme files and add it to you
 theme: something
 ```
 
+## Development
+
+When developing on the theme use the `exampleSite` for testing. Start local hosting by running following command in theme root folder.
+
+```bash
+hugo server -s exampleSite --themesDir=../.. --disableFastRender
+```
+
 ## Contributing
 
 Post bugs and contributions to the [issue tracker](//github.com/2ttech/hugo-devblog-theme/issues). 
