@@ -1,0 +1,23 @@
+{
+  "name": "hugo-devblog-theme",
+  "version": "1.0.0",
+  "description": "Port of devblog bootstrap theme to hugo",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2ttech/hugo-devblog-theme.git"
+  },
+  "author": "Terje Torkelsen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/2ttech/hugo-devblog-theme/issues"
+  },
+  "homepage": "https://github.com/2ttech/hugo-devblog-theme#readme"
+}
