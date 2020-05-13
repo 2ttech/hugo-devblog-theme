@@ -11,7 +11,7 @@
             </div>
             <div class="mb-3">
                 {{ range (.GetTerms "tags") }}
-                <a href="{{ .Permalink }}" class="badge badge-light">{{ .LinkTitle }}</a>
+                <a href="{{ .Permalink }}" class="badge badge-light">#{{ .LinkTitle }}</a>
                 {{ end }}
             </div>
         </header>
