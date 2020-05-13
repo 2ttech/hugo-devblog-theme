@@ -1,9 +1,7 @@
-# Versioning and Subresource Integrity (SRI) for Academic's JavaScript and CSS dependencies
+# Versioning and Subresource Integrity (SRI) for Devblog's JavaScript and CSS dependencies
 
 # When updating the version of an asset below, please also update the corresponding SRI.
-# How to update the SRI for an entry:
-#   echo -n "sha512-" && curl --silent "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML" | openssl dgst -sha512 -binary | openssl enc -base64 -A
-# Or, the SRI for the appropriate asset can be copied from https://cdnjs.com/ .
+# SRI can be found on https://cdnjs.com/ for all resources.
 
 # JavaScript
 
@@ -21,8 +19,8 @@ js:
   sri: sha256-FT/LokHAO3u6YAZv6/EKb7f2e0wXY3Ff/9Ww5NzT+Bk=
   url: https://cdnjs.cloudflare.com/ajax/libs/popper.js/%s/umd/popper.min.js
 - name: bootstrap
-  version: 4.4.0
-  sri: "sha256-oKpAiD7qu3bXrWRVxnXLV1h7FlNV+p5YJBIr8LOCFYw="
+  version: 4.5.0
+  sri: "sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8="
   url: "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/js/bootstrap.min.js"
 - name: highlight
   version: 10.0.2
