@@ -1,5 +1,7 @@
+# scss theme to use, defaults to theme-1
 theme: "theme-1"
 
+# Settings for left navigation panel
 nav:
   description: "Hi, my name is Anthony Doe. Briefly introduce yourself here. You can also provide a link to the about page.<br><a href=\"/about\">Find out more about me</a>"
   image: /img/profile.png
